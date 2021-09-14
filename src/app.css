@@ -33,6 +33,7 @@ h1,
 h2,
 p {
 	font-weight: bold;
+	margin: 0 auto 1em;
 }
 
 p {
