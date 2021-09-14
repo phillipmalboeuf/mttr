@@ -14,6 +14,10 @@
 	--back: var(--black);
 }
 
+* {
+	box-sizing: border-box;
+}
+
 body {
 	min-height: 100vh;
 	margin: 0;
@@ -23,15 +27,12 @@ body {
 
 #svelte {
 	min-height: 100vh;
-	display: flex;
-	flex-direction: column;
 }
 
 h1,
 h2,
 p {
-	font-weight: 400;
-	color: var(--heading-color);
+	font-weight: bold;
 }
 
 p {
@@ -48,13 +49,33 @@ a:focus {
 	color: var(--fluo);
 }
 
+button {
+	cursor: pointer;
+	color: var(--text);
+	border: none;
+	background: transparent;
+}
+
+button:hover,
+button:focus {
+	color: var(--fluo);
+}
+
 h1 {
-	font-size: 2rem;
-	text-align: center;
+	font-size: 10vw;
+	line-height: 1;
 }
 
 h2 {
-	font-size: 1rem;
+	font-size: 6vw;
+	line-height: 1;
+}
+
+blockquote {
+	max-width: 500px;
+	color: var(--black);
+	background: var(--white);
+	padding: calc(var(--gutter) / 2);
 }
 
 pre {
