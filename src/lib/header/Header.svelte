@@ -1,9 +1,12 @@
 <script lang="ts">
 	import Logo from './Logo.svelte';
 	import Menu from './Menu.svelte';
+	import Progress from './Progress.svelte';
 </script>
 
 <header>
+	<Progress />
+
 	<div class="corner">
 		<a href="/">
 			<Logo />
