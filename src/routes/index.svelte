@@ -1,8 +1,19 @@
 <script context="module" lang="ts">
 	export const prerender = true;
+
+	export async function load({ page, fetch, session, context }) {
+		const res = await fetch(`/index.json`)
+
+		return {
+			props: {
+				page: (await res.json()).page.fields
+			}
+		}
+	}
 </script>
 
 <script lang="ts">
+	import Document from '$lib/document/Document.svelte'
 	import { onMount } from 'svelte'
 
 	let scrollY: number
@@ -11,18 +22,20 @@
 	onMount(() => {
 		offsetHeight = document.body.offsetHeight
 	})
+
+	export let page
 </script>
 
 <svelte:head>
-	<title>Home</title>
+	<title>{page.title}</title>
 </svelte:head>
 
 <svelte:window bind:scrollY />
 
 <section style="--slow: {scrollY / offsetHeight * 100}%;">
-	<!-- height: {offsetHeight}<br>
-	scroll: {scrollY} -->
-	<h1 class="slow">
+
+	<Document body={page.body} />
+	<!-- <h1 class="slow">
 		Discourse and understanding are broken
 	</h1>
 
@@ -40,9 +53,7 @@
 		<p>Somewhere between Twitter and Parler, between FOX and CNN, between the Times and the Post, there is a space for real discourse, good faith community, and a content experience that offers better, more nuanced understanding of the issues that matter most.</p>
 
 		<p>We’re building MTTR to be this ‘3rd Space’</p>
-	</blockquote>
-
-	<!-- <Counter /> -->
+	</blockquote> -->
 </section>
 
 <style>
@@ -50,7 +61,7 @@
 		margin-top: 50vh;
 	}
 
-	.slow {
+	:global(.slow) {
 		transform: translateY(var(--slow));
 		position: relative;
 		z-index: -1;
