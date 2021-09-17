@@ -59,5 +59,7 @@
     nav a {
       display: block;
       font-size: 10vw;
+      font-weight: bold;
+      line-height: 1;
     }
 </style>

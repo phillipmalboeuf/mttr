@@ -6,7 +6,7 @@
 
 		return {
 			props: {
-				page: (await res.json()).page.fields
+				page: (await res.json()).page
 			}
 		}
 	}
@@ -23,9 +23,13 @@
 </section>
 
 <style>
-	section {
+	/* section {
+		
+	} */
+
+	section :global(section.white) {
+		color: var(--white);
 		background: var(--blue);
-		padding: calc(var(--gutter) * 3) calc(var(--gutter) * 2) calc(var(--gutter) * 1);
 	}
 
 	:global(h2) {

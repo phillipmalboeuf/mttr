@@ -6,7 +6,7 @@
 
 		return {
 			props: {
-				page: (await res.json()).page.fields
+				page: (await res.json()).page
 			}
 		}
 	}

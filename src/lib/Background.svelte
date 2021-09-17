@@ -12,7 +12,8 @@
 {/if}
 
 <style>
-  figure {
+  figure,
+  figure:after {
     position: fixed;
     top: 0;
     left: 0;
@@ -20,7 +21,13 @@
     height: 100vh;
     z-index: -2;
     margin: 0;
-    opacity: 0.33;
+  }
+
+  figure:after {
+    content: "";
+    background: hsla(0, 0%, 0%, 0.66);
+    position: absolute;
+    z-index: 1;
   }
 
   figure :global(video),

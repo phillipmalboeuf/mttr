@@ -30,8 +30,9 @@
 
 <style>
   section {
-    padding: var(--gutter);
+    padding: calc(var(--gutter) * 3) var(--gutter);
     background: var(--black);
+    margin: calc(var(--gutter) * 2) calc(var(--gutter) * -1) 0 calc(var(--gutter) * -1);
   }
 
   h4 {
