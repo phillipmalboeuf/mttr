@@ -56,6 +56,8 @@
 
 	div :global(figure) {
 		position: sticky;
+		top: -1px;
+		height: 101vh;
 		margin: calc(var(--gutter) * -3) 0 calc(var(--gutter) * -3) calc(var(--gutter) * -1);
 	}
 </style>
