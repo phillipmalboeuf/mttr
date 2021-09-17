@@ -3,6 +3,7 @@
 
 	import Document from '$lib/document/Document.svelte'
   import Background from './Background.svelte'
+	import EasterEggs from './EasterEggs.svelte'
 
 	let scrollY: number
 	let offsetHeight: number
@@ -23,10 +24,12 @@
 <section class:white={!page.fields.background} style="--slow: {scrollY / offsetHeight * 100 * 1.5}%;" id={page.fields.identifier}>
   <Background media={page.fields.background} />
 	<Document body={page.fields.body} />
+	<EasterEggs eggs={page.fields.easterEggs} />
 </section>
 
 <style>
 	section {
+		position: relative;
 		padding: calc(var(--gutter) * 3) var(--gutter) calc(var(--gutter) * 3);
 	}
 
