@@ -92,7 +92,7 @@ p:last-child {
 }
 
 a {
-	color: var(--text);
+	color: currentColor;
 	text-decoration: none;
 }
 

@@ -1,7 +1,9 @@
 <script>
   import Picture from '../Picture.svelte'
-  import List from '../List.svelte'
   import Mark from './Mark.svelte'
+
+  import List from '$lib/List.svelte'
+  import Screens from '$lib/Screens.svelte'
 
   export let node
 </script>
@@ -34,5 +36,7 @@
 {:else if node.nodeType === 'embedded-entry-block'}
 {#if node.data.target.sys.contentType.sys.id === 'collection'}
 <List list={node.data.target} />
+{:else if node.data.target.sys.contentType.sys.id === 'screens'}
+<Screens screens={node.data.target} />
 {/if}
 {/if}

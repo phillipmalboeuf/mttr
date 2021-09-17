@@ -38,6 +38,10 @@
 		background: var(--white);
 	}
 
+		section.white :global(a) {
+			color: var(--blue);
+		}
+
 	:global(h1) {
 		color: var(--fluo);
 	}
