@@ -32,7 +32,11 @@
 		background: var(--blue);
 	}
 
-	:global(h2) {
+	section :global(section.white a) {
+		color: var(--white);
+	}
+
+	section :global(h2) {
 		font-weight: normal;
 	}
 </style>

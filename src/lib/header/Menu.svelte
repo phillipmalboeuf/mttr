@@ -34,7 +34,7 @@
   <a class:active={$page.path === '/about'} sveltekit:prefetch href="/about" on:click={click}>About</a>
   <a sveltekit:prefetch href="/#what" on:click={click}>What we're Building</a>
   <a class:active={$page.path === '/work'} sveltekit:prefetch href="/work" on:click={click}>Work for MTTR</a>
-  <a sveltekit:prefetch href="/others" on:click={click}>Find the Others</a>
+  <a sveltekit:prefetch href="/#others" on:click={click}>Find the Others</a>
 </nav>
 {/if}
 

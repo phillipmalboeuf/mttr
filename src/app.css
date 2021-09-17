@@ -83,6 +83,7 @@ h2 {
 }
 
 p {
+	font-weight: normal;
 	line-height: 1;
 }
 
@@ -111,7 +112,7 @@ strong.underline {
 
 button {
 	cursor: pointer;
-	color: var(--text);
+	color: currentColor;
 	border: none;
 	background: transparent;
 }
@@ -127,6 +128,10 @@ blockquote {
 	color: var(--black);
 	background: var(--white);
 	padding: calc(var(--gutter) / 2);
+}
+
+blockquote p {
+	font-weight: bold;
 }
 
 blockquote strong {
@@ -150,7 +155,8 @@ button {
 	font-family: inherit;
 }
 
-button:focus:not(:focus-visible) {
+button:focus:not(:focus-visible),
+input:focus {
 	outline: none;
 }
 

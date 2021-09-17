@@ -4,6 +4,7 @@
 
   import List from '$lib/List.svelte'
   import Screens from '$lib/Screens.svelte'
+  import NewsletterForm from '$lib/NewsletterForm.svelte'
 
   export let node
 </script>
@@ -38,5 +39,7 @@
 <List list={node.data.target} />
 {:else if node.data.target.sys.contentType.sys.id === 'screens'}
 <Screens screens={node.data.target} />
+{:else if node.data.target.sys.contentType.sys.id === 'newsletterForm'}
+<NewsletterForm form={node.data.target} />
 {/if}
 {/if}

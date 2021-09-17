@@ -3,12 +3,13 @@
 
 	export async function load({ page, fetch, session, context }) {
 		const res = await fetch(`/index.json`)
-		const { home, what, landing } = await res.json()
+		const { home, what, others, landing } = await res.json()
 
 		return {
 			props: {
 				home,
 				what,
+				others,
 				landing
 			}
 		}
@@ -21,6 +22,7 @@
 
 	export let home
 	export let what
+	export let others
 	export let landing
 </script>
 
@@ -30,8 +32,9 @@
 
 <div>
 	<Page page={home} />
-	<Page page={what} />
 </div>
+	<Page page={what} />
+	<Page page={others} />
 
 
 <style>

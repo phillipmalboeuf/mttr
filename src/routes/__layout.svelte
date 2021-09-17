@@ -11,13 +11,16 @@
 </script>
 
 <script lang="ts">
+	import { page } from '$app/stores'
 	import Header from '$lib/header/Header.svelte';
 	import '../app.css';
 
 	export let media
 </script>
 
+{#key $page.path}
 <Header {media} />
+{/key}
 
 <main>
 	<slot />
