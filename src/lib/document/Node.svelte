@@ -1,5 +1,6 @@
 <script>
   import Picture from '../Picture.svelte'
+  import List from '../List.svelte'
   import Mark from './Mark.svelte'
 
   export let node
@@ -30,4 +31,8 @@
 
 {:else if node.nodeType === 'embedded-asset-block'}
 <Picture media={node.data.target} />
+{:else if node.nodeType === 'embedded-entry-block'}
+{#if node.data.target.sys.contentType.sys.id === 'collection'}
+<List list={node.data.target} />
+{/if}
 {/if}

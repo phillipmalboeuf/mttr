@@ -7,6 +7,7 @@
 	--white: #ffffff;
 	--fluo: #D8FF14;
 	--blue: #0051FF;
+	--grey: #828282;
 	--black: #000;
 	--gutter: 4rem;
 
@@ -18,11 +19,14 @@
 	box-sizing: border-box;
 }
 
+html {
+	color: var(--text);
+	background-color: var(--back);
+}
+
 body {
 	min-height: 100vh;
 	margin: 0;
-	color: var(--text);
-	background-color: var(--back);
 }
 
 #svelte {
@@ -72,7 +76,7 @@ h1 {
 }
 
 h2 {
-	font-size: 6vw;
+	font-size: 10vw;
 	line-height: 1;
 }
 

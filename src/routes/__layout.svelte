@@ -1,9 +1,23 @@
+<script context="module">
+	export async function load({ page, fetch, session, context }) {
+		const res = await fetch(`/layout.json`)
+
+		return {
+			props: {
+				media: (await res.json()).media
+			}
+		}
+	}
+</script>
+
 <script lang="ts">
 	import Header from '$lib/header/Header.svelte';
 	import '../app.css';
+
+	export let media
 </script>
 
-<Header />
+<Header {media} />
 
 <main>
 	<slot />

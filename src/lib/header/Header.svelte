@@ -2,6 +2,8 @@
 	import Logo from './Logo.svelte';
 	import Menu from './Menu.svelte';
 	import Progress from './Progress.svelte';
+
+	export let media
 </script>
 
 <header>
@@ -14,7 +16,7 @@
 	</div>
 
 	<div class="corner">
-		<Menu />
+		<Menu {media} />
 	</div>
 </header>
 
