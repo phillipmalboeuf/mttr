@@ -18,4 +18,14 @@
 	export let page
 </script>
 
-<Page {page} />
+<section>
+	<Page {page} />
+</section>
+
+<style>
+	@media (max-width: 900px) {
+		section {
+			padding-top: 10vh;
+		}
+	}
+</style>

@@ -13,6 +13,7 @@
 	})
 
 	export let page
+	export let noWhite = false
 </script>
 
 <svelte:head>
@@ -21,15 +22,18 @@
 
 <svelte:window bind:scrollY />
 
-<section class:white={!page.fields.background} style="--slow: {scrollY / offsetHeight * 100 * 1.5}%;" id={page.fields.identifier}>
+<section class:white={!noWhite && !page.fields.background} style="--slow: {scrollY / offsetHeight * 100 * 1.5}%;" id={page.fields.identifier}>
   <Background media={page.fields.background} />
-	<Document body={page.fields.body} />
+	<div><Document body={page.fields.body} /></div>
 	<EasterEggs eggs={page.fields.easterEggs} />
 </section>
 
 <style>
 	section {
 		position: relative;
+	}
+
+	div {
 		padding: calc(var(--gutter) * 3) var(--gutter) calc(var(--gutter) * 3);
 	}
 
@@ -46,10 +50,30 @@
 		color: var(--fluo);
 	}
 
+	@media (max-width: 900px) {
+		div {
+			overflow: hidden;
+		}
+
+		:global(blockquote) {
+			margin-bottom: 20vh;
+		}
+	}
+
 	:global(.slow) {
 		transform: translateY(var(--slow));
 		position: relative;
 		z-index: -1;
+	}
+
+	@media (max-width: 900px) {
+		:global(.slow) {
+			transform: none !important;
+		}
+	}
+
+	:global(blockquote:nth-of-type(2n)) {
+		margin-right: auto;
 	}
 
 	:global(blockquote:nth-of-type(2n - 1)) {

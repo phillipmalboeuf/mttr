@@ -42,6 +42,12 @@
 	--back: var(--black);
 }
 
+@media (max-width: 900px) {
+	:root {
+		--gutter: 1rem;
+	}
+}
+
 * {
 	box-sizing: border-box;
 }
@@ -80,6 +86,16 @@ h1 {
 h2 {
 	font-size: 8.88vw;
 	line-height: 0.88;
+}
+
+@media (max-width: 900px) {
+	h1 {
+		font-size: 8.88vh;
+	}
+
+	h2 {
+		font-size: 8.88vh;
+	}
 }
 
 p {
@@ -136,6 +152,16 @@ blockquote p {
 
 blockquote strong {
 	font-size: 42px;
+}
+
+@media (max-width: 900px) {
+	blockquote {
+		font-size: 20px;
+	}
+
+	blockquote strong {
+		font-size: 20px;
+	}
 }
 
 pre {

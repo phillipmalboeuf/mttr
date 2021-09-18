@@ -19,7 +19,7 @@
 
 {#if eggs}
 {#each eggs as egg, i}
-<button on:click={() => current = i} style="top: {egg.fields.top}; left: {egg.fields.left};">
+<button on:click={() => current = i} style="top: {egg.fields.top}; left: calc({egg.fields.left} - 5vw);">
   {egg.fields.icon}
 </button>
 {/each}
@@ -50,6 +50,13 @@
     position: absolute;
     font-size: 5vw;
     font-family: 'GT Alpina';
+  }
+
+  @media (max-width: 900px) {
+    button[style] {
+      font-size: 10vh;
+      right: 0;
+    }
   }
 
   article {

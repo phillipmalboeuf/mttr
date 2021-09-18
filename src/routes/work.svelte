@@ -19,22 +19,34 @@
 </script>
 
 <section>
-	<Page {page} />
+	<Page {page} noWhite />
 </section>
 
 <style>
-	/* section {
-		
-	} */
-
-	section :global(section.white) {
+	section {
+		min-height: 100vh;
 		color: var(--white);
 		background: var(--blue);
 	}
 
-	section :global(section.white a) {
-		color: var(--white);
+	@media (max-width: 900px) {
+		section {
+			padding-top: 10vh;
+		}
+
+		section :global(h2) {
+			font-size: 5vh;
+		}
 	}
+
+	/* section :global(section.white) {
+		color: var(--white);
+		background: var(--blue);
+	} */
+
+	/* section :global(section.white a) {
+		color: var(--white);
+	} */
 
 	section :global(h2) {
 		font-weight: normal;

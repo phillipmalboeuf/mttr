@@ -69,4 +69,17 @@
     a:focus blockquote {
       opacity: 1;
     }
+
+    @media (max-width: 900px) {
+      h2 {
+        white-space: normal;
+      }
+
+      a blockquote {
+        position: relative;
+        top: 0;
+        right: auto;
+        opacity: 1;
+      }
+    }
 </style>

@@ -43,8 +43,8 @@
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
     overflow-y: auto;
     background: var(--black);
     color: var(--white);
@@ -61,5 +61,12 @@
       font-size: 10vw;
       font-weight: bold;
       line-height: 1;
+    }
+
+    @media (max-width: 900px) {
+      nav a {
+        font-size: 8.88vh;
+        margin-bottom: 5vh;
+      }
     }
 </style>

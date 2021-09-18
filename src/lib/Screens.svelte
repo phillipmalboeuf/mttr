@@ -60,6 +60,20 @@
       width: 33%;
     }
 
+    @media (max-width: 900px) {
+      article {
+        min-height: auto;
+      }
+
+      article h2 {
+        width: 90%;
+      }
+
+      article :global(p) {
+        width: 90%;
+      }
+    }
+
     figure {
       position: sticky;
       top: 0;
@@ -75,4 +89,15 @@
         padding: 10%;
         object-fit: contain;
       }
+
+    @media (max-width: 900px) {
+      figure {
+        position: relative;
+      }
+
+      figure :global(img),
+      figure :global(video) {
+        padding: 15% 0;
+      }
+    }
 </style>

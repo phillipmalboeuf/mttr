@@ -33,6 +33,14 @@
     transform: translateY(calc(var(--slow) * -1.33));
   }
 
+  @media (max-width: 900px) {
+    article {
+      width: 100%;
+      padding: var(--gutter);
+      transform: none;
+    }
+  }
+
   form {
     border: 1px solid;
     border-radius: 7px;

@@ -3,14 +3,15 @@
 
 	export async function load({ page, fetch, session, context }) {
 		const res = await fetch(`/index.json`)
-		const { home, what, others, landing } = await res.json()
+		const { home, what, others, landing, mobile } = await res.json()
 
 		return {
 			props: {
 				home,
 				what,
 				others,
-				landing
+				landing,
+				mobile
 			}
 		}
 	}
@@ -24,10 +25,15 @@
 	export let what
 	export let others
 	export let landing
+	export let mobile
 </script>
 
 <figure>
 	<Picture media={landing} />
+</figure>
+
+<figure class="mobile">
+	<Picture media={mobile} />
 </figure>
 
 <div>
@@ -53,8 +59,22 @@
     object-fit: cover;
   }
 
+	figure.mobile {
+		display: none;
+	}
+
+	@media (max-width: 900px) {
+		figure:not(.mobile) {
+			display: none;
+		}
+
+		figure.mobile {
+			display: block;
+		}
+	}
+
 	div {
-		margin-top: 100vh;
+		margin-top: 120vh;
 	}
 
 	div :global(figure) {
