@@ -61,7 +61,7 @@
 	}
 
 	:global(.slow) {
-		transform: translateY(var(--slow));
+		transform: translate3d(0, var(--slow), 0);
 		position: relative;
 		z-index: -1;
 	}

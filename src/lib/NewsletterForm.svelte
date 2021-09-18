@@ -30,7 +30,7 @@
     background: var(--fluo);
     width: 420px;
     margin: 0 var(--gutter) 0 auto;
-    transform: translateY(calc(var(--slow) * -0.5));
+    transform: translate3d(0, calc(var(--slow) * -0.5), 0);
   }
 
   @media (max-width: 900px) {
