@@ -9,7 +9,7 @@
 	let offsetHeight: number
 
 	onMount(() => {
-		offsetHeight = document.body.offsetHeight
+		offsetHeight = (document.body.offsetHeight / 3)
 	})
 
 	export let page
@@ -22,7 +22,7 @@
 
 <svelte:window bind:scrollY />
 
-<section class:white={!noWhite && !page.fields.background} style="--slow: {scrollY / offsetHeight * 100 * 1.5}%;" id={page.fields.identifier}>
+<section class:white={!noWhite && !page.fields.background} style="--slow: {scrollY / offsetHeight * 100}%;" id={page.fields.identifier}>
   <Background media={page.fields.background} />
 	<div><Document body={page.fields.body} /></div>
 	<EasterEggs eggs={page.fields.easterEggs} />
