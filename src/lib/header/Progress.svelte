@@ -15,6 +15,8 @@
 
 <style>
   progress {
+    -webkit-appearance: none;
+    -moz-appearance: none;
     appearance: none;
 
     position: fixed;
@@ -30,6 +32,14 @@
   }
 
   progress::-webkit-progress-value {
+    background: var(--blue);
+  }
+
+  progress::-moz-progress-bar {
+    background: transparent;
+  }
+
+  progress::-moz-progress-value {
     background: var(--blue);
   }
 </style>
