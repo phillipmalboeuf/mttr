@@ -19,6 +19,10 @@
 		)
 
 		document.querySelectorAll('section.white').forEach(element => observer.observe(element))
+
+		return () => {
+      observer.disconnect()
+    }
 	})
 </script>
 

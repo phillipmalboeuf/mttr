@@ -13,13 +13,30 @@
       body: RichTextContent
     }>[]
   }>
+
+  let visible: string
+
+  onMount(() => {
+		const observer = new IntersectionObserver( 
+			(entries) => {
+				visible = entries.find(entry => entry.isIntersecting)?.target.id
+			},
+			{ threshold: [0], rootMargin: '-50% 0px' }
+		)
+
+		list.fields.items.forEach(item => observer.observe(document.getElementById(item.fields.identifier)))
+
+    return () => {
+      observer.disconnect()
+    }
+	})
 </script>
 
 <section>
   <h4>{list.fields.title}</h4>
 
   {#each list.fields.items as item}
-  <a href="#{item.fields.identifier}" id={item.fields.identifier}>
+  <a on:pointerenter={() => visible = item.fields.identifier} href="#{item.fields.identifier}" id={item.fields.identifier} class:visible={visible === item.fields.identifier}>
     <h2>{item.fields.title}</h2>
     <blockquote>
       <Document body={item.fields.body} />
@@ -48,25 +65,31 @@
     white-space: nowrap;
   }
 
-  h2:hover {
-  }
-
   a {
     display: block;
     position: relative;
+  }
+
+  a.visible h2 {
+    color: var(--fluo);
   }
 
     a blockquote {
       position: absolute;
       z-index: 1;
       right: 20%;
-      top: -20%;
+      bottom: -50%;
       opacity: 0;
       transition: opacity 666ms;
+      max-width: 666px;
+      font-size: 20px;
     }
 
-    a:hover blockquote,
-    a:focus blockquote {
+    a blockquote :global(strong) {
+      font-size: 20px;
+    }
+
+    a.visible blockquote {
       opacity: 1;
     }
 
