@@ -30,11 +30,13 @@
     </svg>
   </button>
 
-  <!-- <a class:active={$page.path === '/'} sveltekit:prefetch href="/">Home</a> -->
-  <a class:active={$page.path === '/about'} sveltekit:prefetch href="/about" on:click={click}>About</a>
-  <a sveltekit:prefetch href="/#what" on:click={click}>What we're Building</a>
-  <a class:active={$page.path === '/work'} sveltekit:prefetch href="/work" on:click={click}>Work for MTTR</a>
-  <a sveltekit:prefetch href="/#others" on:click={click}>Find the Others</a>
+  <div>
+    <!-- <a class:active={$page.path === '/'} sveltekit:prefetch href="/">Home</a> -->
+    <a class:active={$page.path === '/about'} sveltekit:prefetch href="/about" on:click={click}>About</a>
+    <a sveltekit:prefetch href="/#what" on:click={click}>What we're Building</a>
+    <a class:active={$page.path === '/work'} sveltekit:prefetch href="/work" on:click={click}>Work for MTTR</a>
+    <a sveltekit:prefetch href="/#others" on:click={click}>Find the Others</a>
+  </div>
 </nav>
 {/if}
 
@@ -50,10 +52,18 @@
     color: var(--white);
 
     padding: var(--gutter);
+
+    display: flex;
+    align-items: center;
   }
 
     nav button {display: block;
       margin-left: auto;
+      position: absolute;
+      top: 0;
+      right: 0;
+
+      padding: var(--gutter);
     }
 
     nav a {
@@ -67,6 +77,10 @@
       nav a {
         font-size: 8.88vh;
         margin-bottom: 5vh;
+      }
+
+      nav a:last-child {
+        margin-bottom: 0;
       }
     }
 </style>
