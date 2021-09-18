@@ -25,6 +25,10 @@
 
 <style>
   article {
+    position: absolute;
+    top: 90%;
+    right: 0;
+
     padding: calc(var(--gutter) / 2);
     color: var(--black);
     background: var(--fluo);
@@ -35,6 +39,8 @@
 
   @media (max-width: 900px) {
     article {
+      position: relative;
+      top: auto;
       width: 100%;
       padding: var(--gutter);
       transform: none;
