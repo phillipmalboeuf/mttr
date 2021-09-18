@@ -33,23 +33,63 @@
 </script>
 
 <section>
-  <h4>{list.fields.title}</h4>
+  <nav>
+    <div>
+      <h4>{list.fields.title}</h4>
 
-  {#each list.fields.items as item}
-  <a on:pointerenter={() => visible = item.fields.identifier} href="#{item.fields.identifier}" id={item.fields.identifier} class:visible={visible === item.fields.identifier}>
-    <h2>{item.fields.title}</h2>
-    <blockquote>
+      {#each list.fields.items as item}
+      <a href="#{item.fields.identifier}" class:visible={visible === item.fields.identifier}>
+        <h2>{item.fields.title}</h2>
+      </a>
+      {/each}
+    </div>
+  </nav>
+
+  <div class="items">
+    {#each list.fields.items as item}
+    <blockquote id={item.fields.identifier}>
       <Document body={item.fields.body} />
     </blockquote>
-  </a>
-  {/each}
+    {/each}
+  </div>
+</section>
+
+<section class="mobile">
+  <nav>
+    <div>
+      <h4>{list.fields.title}</h4>
+
+      {#each list.fields.items as item}
+      <a href="#{item.fields.identifier}" class:visible={visible === item.fields.identifier}>
+        <h2>{item.fields.title}</h2>
+
+        <blockquote>
+          <Document body={item.fields.body} />
+        </blockquote>
+      </a>
+      {/each}
+    </div>
+  </nav>
 </section>
 
 <style>
   section {
-    padding: calc(var(--gutter) * 3) var(--gutter);
-    background: var(--black);
+    position: relative;
     margin: calc(var(--gutter) * 2) calc(var(--gutter) * -1) 0 calc(var(--gutter) * -1);
+  }
+
+  section.mobile {
+    display: none;
+  }
+
+  @media (max-width: 900px) {
+    section:not(.mobile) {
+      display: none;
+    }
+
+    section.mobile {
+      display: block;
+    }
   }
 
   h4 {
@@ -60,6 +100,7 @@
   }
 
 	h2 {
+    font-size: 10vw;
     color: var(--grey);
     margin-bottom: 0;
     white-space: nowrap;
@@ -67,42 +108,55 @@
 
   a {
     display: block;
-    position: relative;
   }
 
   a.visible h2 {
     color: var(--fluo);
   }
 
-    a blockquote {
-      position: absolute;
-      z-index: 1;
-      right: 20%;
-      bottom: -50%;
-      opacity: 0;
-      transition: opacity 666ms;
+  nav {
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0;
+    left: 0;
+    padding: calc(var(--gutter) * 2) var(--gutter);
+    background: var(--black);
+    width: 100vw;
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+  }
+
+  .items {
+    position: relative;
+    z-index: 1;
+    padding-bottom: 33vh;
+  }
+
+    blockquote {
       max-width: 666px;
       font-size: 20px;
+      margin-bottom: 10vw;
     }
 
-    a blockquote :global(strong) {
+    blockquote:nth-of-type(2n) {
+      margin-left: auto;
+    }
+
+    blockquote :global(strong) {
       font-size: 20px;
-    }
-
-    a.visible blockquote {
-      opacity: 1;
     }
 
     @media (max-width: 900px) {
       h2 {
+        font-size: 8.88vh;
         white-space: normal;
       }
 
-      a blockquote {
-        position: relative;
-        top: 0;
-        right: auto;
-        opacity: 1;
+      blockquote {
+        max-width: 100%;
+        margin-right: 0;
       }
     }
 </style>
