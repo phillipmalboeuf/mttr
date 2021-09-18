@@ -93,6 +93,13 @@
       overflow-y: auto;
     }
 
+    @media (max-width: 900px) {
+      article div {
+        padding: calc(var(--gutter) * 2);
+        max-width: 100%;
+      }
+    }
+
     article div :global(p) {
       font-weight: normal;
       max-width: 366px;
