@@ -17,7 +17,7 @@
 </script>
 
 <svelte:head>
-	<title>{page.fields.title}</title>
+	<title>Mean Time to Repair – {page.fields.title}</title>
 </svelte:head>
 
 <svelte:window bind:scrollY />
