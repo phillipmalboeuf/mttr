@@ -1,5 +1,5 @@
 <script context="module" lang="ts">
-	export const prerender = true;
+	export const prerender = false;
 
 	export async function load({ page, fetch, session, context }) {
 		const res = await fetch(`/index.json`)
