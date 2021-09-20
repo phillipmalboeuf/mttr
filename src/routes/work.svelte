@@ -34,7 +34,7 @@
 			padding-top: 10vh;
 		}
 
-		section :global(h2) {
+		section :global(h3) {
 			font-size: 5vh;
 		}
 	}
@@ -48,7 +48,7 @@
 		color: var(--white);
 	} */
 
-	section :global(h2) {
+	section :global(h3) {
 		font-weight: normal;
 	}
 </style>

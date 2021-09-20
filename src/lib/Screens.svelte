@@ -26,7 +26,7 @@
   </figure>
   {/if}
   <article id={screen.fields.identifier}>
-    <h2>{screen.fields.title}</h2>
+    <h3>{screen.fields.title}</h3>
     <Document body={screen.fields.body} />
   </article>
   {/each}
@@ -34,24 +34,32 @@
 </section>
 
 <style>
+  /* section {
+    margin-top: -100vh;
+  } */
+
   article {
     min-height: 100vh;
   }
 
-    article > h2,
+  article:first-of-type {
+    margin-top: -100vh;
+  }
+
+    article > h3,
     article > :global(p) {
       margin-left: 0;
     }
 
-    article:nth-of-type(2n) > h2,
+    article:nth-of-type(2n) > h3,
     article:nth-of-type(2n) > :global(p) {
       margin-left: auto;
       margin-right: 0;
     }
 
-    article h2 {
+    article h3 {
       margin-bottom: 0.2em;
-      width: 66%;
+      width: 40%;
     }
 
     article :global(p) {
@@ -65,7 +73,11 @@
         min-height: auto;
       }
 
-      article h2 {
+      article:first-of-type {
+        margin-top: 0;
+      }
+
+      article h3 {
         width: 90%;
       }
 
