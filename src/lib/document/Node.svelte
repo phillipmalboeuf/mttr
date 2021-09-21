@@ -10,7 +10,7 @@
 </script>
 
 {#if node.nodeType === 'heading-1'}
-  <h1 class="slow">{#each node.content as mark}<Mark mark={mark} />{/each}</h1>
+  <h1 class="slow"><div>{#each node.content as mark}<Mark mark={mark} />{/each}</div></h1>
 {:else if node.nodeType === 'heading-2'}
   <h2>{#each node.content as mark}<Mark mark={mark} />{/each}</h2>
 {:else if node.nodeType === 'heading-3'}

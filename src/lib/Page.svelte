@@ -50,25 +50,45 @@
 		color: var(--fluo);
 	}
 
+	section :global(div:not(.items) > blockquote) {
+		margin-bottom: 20vh;
+		transform: translateY(-50vh);
+	}
+
 	@media (max-width: 900px) {
 		div {
 			overflow: hidden;
 		}
-
-		:global(blockquote) {
-			margin-bottom: 20vh;
-		}
 	}
 
 	:global(.slow) {
-		transform: translate3d(0, var(--slow), 0);
-		position: relative;
-		z-index: -1;
+		min-height: 100vh;
+		margin-bottom: 0;
 	}
 
+	:global(.slow > div) {
+		position: sticky;
+		top: 50%;
+		transform: translateY(-50%);
+		z-index: -1;
+	}
+	
 	@media (max-width: 900px) {
 		:global(.slow) {
-			transform: none !important;
+			min-height: auto;
+			top: 0;
+			transform: none;
+		}
+
+		:global(.slow > div) {
+			position: relative;
+			top: 0;
+			transform: none;
+			z-index: 0;
+		}
+
+		section :global(div:not(.items) > blockquote) {
+			transform: none;
 		}
 	}
 
