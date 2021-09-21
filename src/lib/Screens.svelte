@@ -34,16 +34,16 @@
 </section>
 
 <style>
-  /* section {
-    margin-top: -100vh;
-  } */
+  section {
+    margin-top: calc(var(--gutter) * -3);
+  }
 
   article {
     min-height: 100vh;
   }
 
   article:first-of-type {
-    margin-top: -100vh;
+    margin-top: calc((var(--gutter) * 3) - 100vh);
   }
 
     article > h3,

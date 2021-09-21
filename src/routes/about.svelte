@@ -23,6 +23,16 @@
 </section>
 
 <style>
+	section :global(blockquote:nth-of-type(2n)) {
+		margin-right: 0;
+		margin-left: auto;
+	}
+
+	section :global(blockquote:nth-of-type(2n - 1)) {
+		margin-left: 0;
+		margin-right: auto;
+	}
+	
 	@media (max-width: 900px) {
 		section {
 			padding-top: 10vh;

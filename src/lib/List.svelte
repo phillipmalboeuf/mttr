@@ -21,7 +21,7 @@
 			(entries) => {
 				visible = entries.find(entry => entry.isIntersecting)?.target.id
 			},
-			{ threshold: [0], rootMargin: '-50% 0px' }
+			{ threshold: [0], rootMargin: '-20% 0px' }
 		)
 
 		list.fields.items.forEach(item => observer.observe(document.getElementById(item.fields.identifier)))
@@ -137,7 +137,7 @@
     blockquote {
       max-width: 666px;
       font-size: 20px;
-      margin-bottom: 10vw;
+      margin-bottom: 40vw;
     }
 
     blockquote:nth-of-type(2n) {

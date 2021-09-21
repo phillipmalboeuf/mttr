@@ -96,11 +96,11 @@ h3 {
 
 @media (max-width: 900px) {
 	h1 {
-		font-size: 8.88vh;
+		font-size: 7.77vh;
 	}
 
 	h2 {
-		font-size: 8.88vh;
+		font-size: 7.77vh;
 	}
 
 	h3 {
@@ -110,7 +110,7 @@ h3 {
 
 p {
 	font-weight: normal;
-	line-height: 1;
+	line-height: 1.15;
 }
 
 h2:last-child,
@@ -162,6 +162,7 @@ blockquote p {
 
 blockquote strong {
 	font-size: 42px;
+	line-height: 1;
 }
 
 @media (max-width: 900px) {
