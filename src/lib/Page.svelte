@@ -24,7 +24,7 @@
 
 <section class:white={!noWhite && !page.fields.background} style="--slow: {scrollY / offsetHeight * -100}%;" id={page.fields.identifier}>
   <Background media={page.fields.background} />
-	<div><Document body={page.fields.body} /></div>
+	<div class="page"><Document body={page.fields.body} /></div>
 	<EasterEggs eggs={page.fields.easterEggs} />
 </section>
 

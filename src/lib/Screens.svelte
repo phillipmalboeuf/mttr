@@ -102,6 +102,13 @@
         object-fit: contain;
       }
 
+    @media (max-width: 1400px) {
+      figure :global(img),
+      figure :global(video) {
+        padding: 15% 0;
+      }
+    }
+
     @media (max-width: 900px) {
       figure {
         position: relative;

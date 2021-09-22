@@ -32,6 +32,10 @@
 		margin-left: 0;
 		margin-right: auto;
 	}
+
+	section :global(.page) {
+		padding-bottom: 0;
+	}
 	
 	@media (max-width: 900px) {
 		section {
