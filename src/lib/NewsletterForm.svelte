@@ -9,15 +9,17 @@
 	export let form: Entry<{
     cta: string,
     body: RichTextContent,
-    formUrl: string
+    formUrl: string,
+    formSecret: string
   }>
 </script>
 
 
 <article>
   <Document body={form.fields.body} />
-  <form action={form.fields.formUrl} target="_blank">
-    <input type="email" name="EMAIL" placeholder="your.email@gmail.com" />
+  <form action={form.fields.formUrl} method="POST" target="_blank">
+    <input type="email" name="EMAIL" required placeholder="your.email@gmail.com" />
+    <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name={form.fields.formSecret} tabindex="-1" value=""></div>
     <button type="submit">{form.fields.cta}</button>
   </form>
 </article>
