@@ -74,13 +74,13 @@
 	}
 
 	div {
-		margin-top: 120vh;
+		margin-top: calc(100vh + (var(--gutter) * 3));
 	}
 
 	div :global(figure) {
 		position: sticky;
 		top: -1px;
 		height: 101vh;
-		margin: calc(var(--gutter) * -3) 0 calc(var(--gutter) * -3) calc(var(--gutter) * -1);
+		margin: calc(var(--gutter) * -3) 0 -100vh calc(var(--gutter) * -1);
 	}
 </style>
