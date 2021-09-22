@@ -44,6 +44,7 @@
       width: 100%;
       padding: var(--gutter);
       transform: none;
+      margin: 0;
     }
   }
 
