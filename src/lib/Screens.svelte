@@ -33,9 +33,39 @@
 
 </section>
 
+<section class="mobile">
+
+  {#each screens.fields.screens as screen}
+  <article id={screen.fields.identifier}>
+    <h3>{screen.fields.title}</h3>
+    <Document body={screen.fields.body} />
+  </article>
+  {#if screen.fields.media}
+  <figure>
+    <Picture media={screen.fields.media} />
+  </figure>
+  {/if}
+  {/each}
+
+</section>
+
 <style>
   section {
     margin-top: calc(var(--gutter) * -3);
+  }
+
+  section.mobile {
+    display: none;
+  }
+
+  @media (max-width: 900px) {
+    section:not(.mobile) {
+      display: none;
+    }
+
+    section.mobile {
+      display: block;
+    }
   }
 
   article {
@@ -74,7 +104,7 @@
       }
 
       article:first-of-type {
-        margin-top: 0;
+        margin-top: calc((var(--gutter) * 3));
       }
 
       article h3 {
