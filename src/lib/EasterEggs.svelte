@@ -19,7 +19,7 @@
 
 {#if eggs}
 {#each eggs as egg, i}
-<button on:click={() => current = i} style="top: {egg.fields.top}; left: calc({egg.fields.left} - 5vw);">
+<button on:click={() => current = i} style="top: {egg.fields.top}; left: calc({egg.fields.left} - 10vw);">
   {egg.fields.icon}
 </button>
 {/each}
