@@ -31,6 +31,7 @@
 <style>
 	section {
 		position: relative;
+		margin-bottom: -50vh;
 	}
 
 	div {
@@ -51,6 +52,10 @@
 	}
 
 	@media (max-width: 900px) {
+		section {
+			margin-bottom: 0;
+		}
+		
 		div {
 			overflow: hidden;
 		}
@@ -65,7 +70,6 @@
 		/* margin-bottom: -200vh; */
 		min-height: 200vh;
 	}
-
 
 	:global(.slow > div) {
 		position: sticky;
