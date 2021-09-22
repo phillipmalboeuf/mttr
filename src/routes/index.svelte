@@ -81,6 +81,10 @@
 		position: sticky;
 		top: -1px;
 		height: 101vh;
-		margin: calc(var(--gutter) * -3) 0 -100vh calc(var(--gutter) * -1);
+		margin: 0 0 -100vh calc(var(--gutter) * -1);
+	}
+
+	div :global(h1:first-of-type) {
+		margin-top: 100vh;
 	}
 </style>

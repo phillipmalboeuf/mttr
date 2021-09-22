@@ -22,7 +22,7 @@
 
 <svelte:window bind:scrollY />
 
-<section class:white={!noWhite && !page.fields.background} style="--slow: {scrollY / offsetHeight * 100}%;" id={page.fields.identifier}>
+<section class:white={!noWhite && !page.fields.background} style="--slow: {scrollY / offsetHeight * -100}%;" id={page.fields.identifier}>
   <Background media={page.fields.background} />
 	<div><Document body={page.fields.body} /></div>
 	<EasterEggs eggs={page.fields.easterEggs} />
@@ -50,21 +50,22 @@
 		color: var(--fluo);
 	}
 
-	section :global(div:not(.items) > blockquote) {
-		margin-bottom: 20vh;
-		transform: translateY(-50vh);
-	}
-
 	@media (max-width: 900px) {
 		div {
 			overflow: hidden;
 		}
 	}
 
-	:global(.slow) {
-		min-height: 100vh;
-		margin-bottom: 0;
+	section :global(div:not(.items) > blockquote) {
+		transform: translate3d(0, calc(-222vh + 100%), 0);
+		margin-bottom: 20vh;
 	}
+
+	:global(.slow) {
+		/* margin-bottom: -200vh; */
+		min-height: 200vh;
+	}
+
 
 	:global(.slow > div) {
 		position: sticky;
@@ -76,8 +77,6 @@
 	@media (max-width: 900px) {
 		:global(.slow) {
 			min-height: auto;
-			top: 0;
-			transform: none;
 		}
 
 		:global(.slow > div) {
