@@ -21,7 +21,7 @@
 			(entries) => {
 				visible = entries.find(entry => entry.isIntersecting)?.target.id
 			},
-			{ threshold: [0], rootMargin: '-20% 0px' }
+			{ threshold: 0.5, rootMargin: '0px 0px' }
 		)
 
 		list.fields.items.forEach(item => observer.observe(document.getElementById(item.fields.identifier)))
