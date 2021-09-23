@@ -9,7 +9,7 @@ const config = {
 	preprocess: preprocess(),
 	
 	kit: {
-		adapter: process.env.VERCEL ? vercel() : netlify(),
+		adapter: netlify(),
 		target: '#svelte'
 	}
 };
