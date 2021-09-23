@@ -61,14 +61,13 @@
 		}
 	}
 
-	section :global(div:not(.items) > blockquote) {
-		transform: translate3d(0, calc(-222vh + 100%), 0);
-		margin-bottom: 20vh;
+	section :global(div.page > blockquote) {
+		transform: translate3d(0, calc(-175vh + 0%), 0);
+		margin-bottom: 20vh; 
 	}
 
 	:global(.slow) {
-		/* margin-bottom: -200vh; */
-		min-height: 200vh;
+		min-height: 220vh;
 	}
 
 	:global(.slow > div) {
