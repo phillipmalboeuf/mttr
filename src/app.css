@@ -96,15 +96,15 @@ h3 {
 
 @media (max-width: 900px) {
 	h1 {
-		font-size: 7.77vh;
+		/* font-size: 7.5vw; */
 	}
 
 	h2 {
-		font-size: 7.77vh;
+		/* font-size: 7.5vw; */
 	}
 
 	h3 {
-		font-size: 6.66vh;
+		font-size: 8.88vw;
 	}
 }
 

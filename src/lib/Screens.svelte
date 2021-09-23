@@ -113,6 +113,7 @@
 
       article :global(p) {
         width: 90%;
+        font-size: 20px;
       }
     }
 
