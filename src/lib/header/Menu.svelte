@@ -25,7 +25,7 @@ import Logo from './Logo.svelte';
   <Background {media} />
 
   <div class="corner">
-		<a href="/">
+		<a href="/#top" on:click={click}>
 			<Logo />
 		</a>
 	</div>

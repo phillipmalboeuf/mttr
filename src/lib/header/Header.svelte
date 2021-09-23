@@ -30,7 +30,7 @@
 	<Progress />
 
 	<div class="corner">
-		<a href="/">
+		<a href="/#top">
 			{#if white}
 			<AlternateLogo />
 			{:else}
