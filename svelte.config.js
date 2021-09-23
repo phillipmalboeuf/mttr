@@ -1,5 +1,6 @@
 import preprocess from 'svelte-preprocess';
 import vercel from '@sveltejs/adapter-vercel'
+import netlify from '@sveltejs/adapter-netlify'
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
@@ -8,7 +9,7 @@ const config = {
 	preprocess: preprocess(),
 	
 	kit: {
-		adapter: vercel(),
+		adapter: process.env.VERCEL ? vercel() : netlify(),
 		target: '#svelte'
 	}
 };
