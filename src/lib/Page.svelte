@@ -31,7 +31,7 @@
 <style>
 	section {
 		position: relative;
-		margin-bottom: -50vh;
+		/* margin-bottom: -50vh; */
 	}
 
 	div {
