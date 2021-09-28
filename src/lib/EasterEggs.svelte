@@ -19,7 +19,7 @@
 
 {#if eggs}
 {#each eggs as egg, i}
-<button on:click={() => current = i} style="top: {egg.fields.top}; left: calc({egg.fields.left} - 10vw);">
+<button on:click={() => current = i} style={(egg.fields.top && egg.fields.left) && `top: ${egg.fields.top}; left: calc(${egg.fields.left} - 10vw);`}>
   {egg.fields.icon}
 </button>
 {/each}
@@ -44,6 +44,7 @@
   button {
     border: none;
     background: transparent;
+    padding: 0;
   }
 
   button[style] {
@@ -70,6 +71,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    color: var(--white);
   }
 
     article > button {

@@ -62,7 +62,8 @@
 	}
 
 	section :global(div.page > blockquote) {
-		transform: translate3d(0, calc(-175vh + 0%), 0);
+		position: relative;
+		top: -175vh;
 		margin-bottom: 20vh; 
 	}
 
@@ -89,8 +90,8 @@
 			z-index: 0;
 		}
 
-		section :global(div:not(.items) > blockquote) {
-			transform: none;
+		section :global(div.page > blockquote) {
+			top: 0;
 		}
 	}
 

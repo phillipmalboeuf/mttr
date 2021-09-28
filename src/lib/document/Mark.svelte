@@ -1,4 +1,6 @@
 <script>
+  import EasterEggs from '$lib/EasterEggs.svelte';
+
   export let mark
 </script>
 
@@ -28,4 +30,4 @@
 <a href="{mark.data.target.fields.file.url}" target="_blank">
   {#each mark.content as mark}<svelte:self mark={mark} />{/each}
 </a>
-{/if}
+{:else if mark.nodeType === 'embedded-entry-inline'}{#if mark.data.target.sys.contentType.sys.id === 'easterEgg'}<EasterEggs eggs={[mark.data.target]} />{/if}{/if}
