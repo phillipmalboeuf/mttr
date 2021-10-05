@@ -11,17 +11,42 @@
     body: RichTextContent,
     formUrl: string,
     formSecret: string
+    successText: string
   }>
+
+  let success = false
+  let pending = false
+  let error: string
 </script>
 
 
 <article>
   <Document body={form.fields.body} />
-  <form action={form.fields.formUrl} method="POST" target="_blank">
+  {#if success}
+  <p><strong>{form.fields.successText}</strong></p>
+  {:else}
+  <form action={form.fields.formUrl} method="POST" use:enhance={{
+    pending: () => {
+      pending = true
+      error = undefined
+    },
+    error: async (res) => {
+      const result = await res.text()
+      pending = false
+      error = result
+    },
+    result: async (res, form) => {
+      const result = await res.text()
+      pending = false
+      success = true
+    }
+  }}>
     <input type="email" name="EMAIL" required placeholder="your.email@gmail.com" />
     <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name={form.fields.formSecret} tabindex="-1" value=""></div>
-    <button type="submit">{form.fields.cta}</button>
+    <button type="submit" disabled={pending}>{form.fields.cta}</button>
   </form>
+  {#if error}<p><strong>{error}</strong></p>{/if}
+  {/if}
 </article>
 
 
@@ -75,5 +100,10 @@
       background: var(--black);
       padding: 1.5em;
       border-radius: 9px;
+    }
+
+    button[disabled] {
+      pointer-events: none;
+      opacity: 0.5;
     }
 </style>
