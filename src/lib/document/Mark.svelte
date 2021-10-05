@@ -4,12 +4,18 @@
   export let mark
 </script>
 
+<style>
+  a {
+    text-decoration: underline;
+  }
+</style>
+
 {#if mark.nodeType === 'text'}
 {#if mark.marks.length > 0}
   {#if mark.marks[0].type === 'italic'}
   <em><svelte:self mark={{ ...mark, marks: mark.marks.slice(1) }} /></em>
   {:else if mark.marks[0].type === 'underline'}
-  <strong class="underline"><svelte:self mark={{ ...mark, marks: mark.marks.slice(1) }} /></strong>
+  <span class="underline"><svelte:self mark={{ ...mark, marks: mark.marks.slice(1) }} /></span>
   {:else if mark.marks[0].type === 'bold'}
   <strong><svelte:self mark={{ ...mark, marks: mark.marks.slice(1) }} /></strong>
   {:else if mark.marks[0].type === 'code'}

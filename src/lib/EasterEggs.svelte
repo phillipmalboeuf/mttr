@@ -104,7 +104,7 @@
 
     article div :global(p) {
       font-weight: normal;
-      max-width: 366px;
+      /* max-width: 366px; */
     }
 
     article div > button  {
