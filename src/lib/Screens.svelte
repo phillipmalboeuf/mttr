@@ -88,8 +88,9 @@
     }
 
     article h3 {
+      font-size: 5vw;
       margin-bottom: 0.2em;
-      width: 40%;
+      width: 33%;
     }
 
     article :global(p) {
@@ -129,18 +130,23 @@
       figure :global(img),
       figure :global(video) {
         height: 100%;
-        padding: 10%;
+        width: 100%;
+        padding: 10% 33%;
         object-fit: contain;
       }
 
     @media (max-width: 1400px) {
       figure :global(img),
       figure :global(video) {
-        padding: 15% 0;
+        /* padding: 15% 0; */
       }
     }
 
     @media (max-width: 900px) {
+      article h3 {
+        font-size: 8vw;
+      }
+
       figure {
         position: relative;
       }

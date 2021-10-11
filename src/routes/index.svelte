@@ -46,7 +46,7 @@
 <style>
 	figure {
 		width: 100vw;
-    height: 100vh;
+    height: 56.25vw;
 		margin: 0;
 		position: fixed;
 		top: 0;
@@ -63,18 +63,8 @@
 		display: none;
 	}
 
-	@media (max-width: 900px) {
-		figure:not(.mobile) {
-			display: none;
-		}
-
-		figure.mobile {
-			display: block;
-		}
-	}
-
 	div {
-		margin-top: calc(100vh + (var(--gutter) * 3));
+		margin-top: 56.25vw;
 	}
 
 	div :global(figure) {
@@ -85,6 +75,21 @@
 	}
 
 	div :global(h1:first-of-type) {
-		margin-top: 100vh;
+		margin-top: 56.25vw;
+	}
+
+	@media (max-width: 900px) {
+		figure:not(.mobile) {
+			display: none;
+		}
+
+		figure.mobile {
+			display: block;
+			height: 177.77vw;
+		}
+
+		div {
+			margin-top: 177.77vw;
+		}
 	}
 </style>
